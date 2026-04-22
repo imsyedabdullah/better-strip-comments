@@ -1,7 +1,7 @@
 {
   "name": "better-strip-comments",
   "description": "Strip line and/or block comments from a string. A fork of strip-comments with fixes for string-aware parsing (URLs, globs, PHP quirks) and added language support (Rust, Go, Kotlin, TOML, YAML, PowerShell, Batch, and more).",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/imsyedabdullah/better-strip-comments",
   "author": "Syed Abdullah (https://github.com/imsyedabdullah)",
   "contributors": [
@@ -17,12 +17,14 @@
   "license": "MIT",
   "files": [
     "index.js",
+    "index.d.ts",
     "lib"
   ],
   "main": "index.js",
   "engines": {
     "node": ">=10"
   },
+  "types": "index.d.ts",
   "scripts": {
     "test": "mocha"
   },
