@@ -1,12 +1,18 @@
 {
-  "name": "strip-comments",
-  "description": "Strip line and/or block comments from a string. Blazing fast, and works with JavaScript, Sass, CSS, Less.js, and a number of other languages.",
-  "version": "2.0.1",
-  "homepage": "https://github.com/jonschlinkert/strip-comments",
-  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "jonschlinkert/strip-comments",
+  "name": "better-strip-comments",
+  "description": "Strip line and/or block comments from a string. A fork of strip-comments with fixes for string-aware parsing (URLs, globs, PHP quirks) and added language support (Rust, Go, Kotlin, TOML, YAML, PowerShell, Batch, and more).",
+  "version": "1.0.0",
+  "homepage": "https://github.com/imsyedabdullah/better-strip-comments",
+  "author": "Syed Abdullah (https://github.com/imsyedabdullah)",
+  "contributors": [
+    "Jon Schlinkert (https://github.com/jonschlinkert)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imsyedabdullah/better-strip-comments"
+  },
   "bugs": {
-    "url": "https://github.com/jonschlinkert/strip-comments/issues"
+    "url": "https://github.com/imsyedabdullah/better-strip-comments/issues"
   },
   "license": "MIT",
   "files": [
@@ -18,85 +24,40 @@
     "node": ">=10"
   },
   "scripts": {
-    "test": "mocha",
-    "cover": "nyc --reporter=text --reporter=html mocha"
+    "test": "mocha"
   },
   "devDependencies": {
-    "gulp-format-md": "^2.0.0",
-    "mocha": "^6.2.2",
-    "nyc": "^14.1.1"
+    "mocha": "^10"
   },
   "keywords": [
-    "ada comments",
-    "apl comments",
-    "applescript comments",
-    "block comment",
-    "block",
-    "block-comment",
-    "c comments",
-    "code comment",
-    "comment",
-    "comments",
-    "csharp comments",
-    "css comments",
-    "css",
-    "hashbang comments",
-    "haskell comments",
-    "html comments",
-    "java comments",
-    "javascript comments",
-    "javascript",
-    "js",
-    "less comments",
-    "less css",
-    "less",
-    "less.js",
-    "lessjs",
-    "line comment",
-    "line comments",
-    "line",
-    "line-comment",
-    "line-comments",
-    "lua comments",
-    "matlab comments",
-    "ocaml comments",
-    "pascal comments",
-    "perl comments",
-    "php comments",
-    "python comments",
-    "remove",
-    "ruby comments",
-    "sass comments",
-    "sass",
-    "shebang comments",
-    "sql comments",
     "strip",
-    "swift comments",
-    "typscript comments",
-    "xml comments"
-  ],
-  "verb": {
-    "toc": true,
-    "layout": "default",
-    "tasks": [
-      "readme"
-    ],
-    "plugins": [
-      "gulp-format-md"
-    ],
-    "helpers": [
-      "./examples/support/helpers.js"
-    ],
-    "related": {
-      "list": [
-        "code-context",
-        "extract-comments",
-        "parse-code-context",
-        "parse-comments"
-      ]
-    },
-    "lint": {
-      "reflinks": true
-    }
-  }
+    "comments",
+    "comment",
+    "strip-comments",
+    "better-strip-comments",
+    "block-comment",
+    "line-comment",
+    "remove-comments",
+    "javascript",
+    "typescript",
+    "jsx",
+    "tsx",
+    "php",
+    "python",
+    "rust",
+    "go",
+    "kotlin",
+    "dart",
+    "scala",
+    "yaml",
+    "toml",
+    "ini",
+    "jsonc",
+    "json5",
+    "powershell",
+    "batch",
+    "bash",
+    "shell",
+    "elixir"
+  ]
 }

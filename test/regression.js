@@ -1,10 +1,13 @@
 /*!
- * strip-comments <https://github.com/jonschlinkert/strip-comments>
+ * better-strip-comments <https://github.com/imsyedabdullah/better-strip-comments>
+ *
+ * A fork of strip-comments by Jon Schlinkert:
+ *   https://github.com/jonschlinkert/strip-comments
  *
  * Copyright (c) 2014-present, Jon Schlinkert.
- * Released under the MIT license.
+ * Copyright (c) 2026, Syed Abdullah (fork modifications).
+ * Released under the MIT License.
  */
-
 'use strict';
 
 const assert = require('assert');

@@ -32,6 +32,36 @@ Changelog entries are classified using the following labels _(from [keep-a-chang
 
 </details>
 
+---
+
+# better-strip-comments
+
+Published to npm as `better-strip-comments`, forked from [`strip-comments@2.0.1`](https://github.com/jonschlinkert/strip-comments). The public API is unchanged from the original; version numbering restarts at `1.0.0` under the new package name.
+
+## [1.0.0] - 2026-04-22
+
+**Fixed**
+
+- String-aware parsing. The original `QUOTED_STRING_REGEX` relied on a backreference inside a character class (`[^\1]`), which JavaScript silently interprets as the octal character `\x01` rather than "not the opening quote." This caused the parser to mis-tokenize strings containing comment markers — most visibly truncating everything after `'/*...'` in PHP and shell-glob inputs. Replaced with three per-quote regexes (single, double, backtick) that correctly handle escape sequences and bound single/double-quoted strings to a single line.
+- PHP line-comment stripping at EOF. The old `(?=\?>|\n)` lookahead required either a PHP close tag or a newline to follow a `#` or `//` comment, so a trailing comment on the final line (no newline) was left in the output. Now also accepts end-of-string as a terminator.
+- Preserved URLs (`"https://..."`), glob patterns (`'/path/**/*.js'`), hash fragments (`"#section"`), and any other comment-like substrings inside string literals.
+
+**Added**
+
+- New language support: Rust, Go, Kotlin (`kotlin`, `kt`), Dart, Scala, JSON with comments (`jsonc`, `json5`), JSX/TSX, Vue, Svelte, TOML, INI, YAML (`yaml`, `yml`), Shell/Bash (`shell`, `bash`, `sh`, `zsh`), PowerShell (`powershell`, `ps1`), Windows Batch (`batch`, `bat`, `cmd`), R, Elixir, SCSS, and a canonical `typescript` alias. The historical `typscript` typo-alias is retained for backward compatibility.
+- PowerShell-specific block comments (`<# ... #>`).
+- Batch comment detection that handles both `REM` (case-insensitive, word-bounded so `REMOTE` is not mistaken for a comment) and `::`.
+- Extended test suite: 91 new tests across `test/regression.js`, `test/new-languages.js`, and `test/strings.js`, plus fixture pairs for Rust, Go, TOML, YAML, and PowerShell. Full suite (original 60 upstream tests + 91 new) runs with `npm test`.
+
+**Changed**
+
+- Internal `tripleQuotes` flag in the parser renamed to `symmetricBlock` and generalized: any language whose block-open and block-close regex sources are identical (e.g. Python `"""`) gets symmetric-marker handling. No behavior change for existing languages.
+
+---
+
+# strip-comments (original package, pre-fork history)
+
+The entries below are from the original `strip-comments` package by Jon Schlinkert, preserved for historical reference.
 
 ## [2.0.0] - 2019-09-14
 
